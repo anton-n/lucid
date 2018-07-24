@@ -1,0 +1,724 @@
+html
+	box-sizing: border-box
+
+*, *::before, *::after
+	box-sizing: inherit
+
+body
+	font-family: $default-font
+	font-size: 16px
+	line-height: 1
+	color: #000
+	overflow-x: hidden
+	background-color: #fff
+
+::selection
+	background: #b3d4fc
+	text-shadow: none
+
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+
+p
+	margin: 0
+
+ul,ol
+	margin: 0
+	padding: 0
+
+ul li
+	list-style: none
+
+textarea
+	resize: none
+
+.container
+	margin: 0 auto
+	max-width: 1170px
+	width: 100%
+	+r(1200)
+		padding: 0 15px
+
+.g-title
+	color: #1a1a1a
+	font-size: 36px
+	font-weight: 600
+	position: relative
+	display: inline-block
+	+r(700)
+		font-size: 30px
+	&::before
+		position: absolute
+		top: 48px
+		left: 50%
+		margin-left: -24px
+		width: 20px
+		height: 2px
+		background-color: #008ed6
+		content: ''
+	&::after
+		position: absolute
+		top: 48px
+		right: 50%
+		margin-right: -24px
+		width: 20px
+		height: 2px
+		background-color: #008ed6
+		content: ''
+
+.g-intro
+	display: block
+	color: #008ed6
+	font-size: 14px
+	font-weight: 700
+	text-transform: uppercase
+	+r(700)
+		font-size: 11px
+
+.g-text
+	color: #999
+	font-size: 18px
+	font-weight: 400
+	line-height: 1.5
+	+r(700)
+		font-size: 15px
+		line-height: 1.8
+
+.header
+	min-height: 640px
+	background: url(../img/phone-1.png) 88% 120px no-repeat, url(../img/header-bg.jpg) 50% 0% no-repeat
+	background-size: auto, cover
+	animation: phone 20s linear infinite
+
+@keyframes phone
+	from
+		background-position: 2500px 120px, 50% 0%
+	to
+		background-position: -500px 120px, 50% 0%
+
+.top-line
+	padding-top: 40px
+	padding-bottom: 90px
+	+r(680)
+		padding-bottom: 45px
+
+.logotype
+	display: inline-block
+	vertical-align: top
+	+r(680)
+		display: block
+		text-align: center
+	&__link
+		font-size: 24px
+		font-weight: 700
+		color: #fff
+		text-transform: uppercase
+		text-decoration: none
+		span
+			display: inline-block
+			vertical-align: baseline
+			margin-left: 4px
+			font-size: 9px
+			line-height: 1
+			font-weight: 400
+			color: #4e4e53
+
+.navigation
+	display: inline-block
+	vertical-align: top
+	float: right
+	position: relative
+	top: 3px
+	+r(680)
+		float: none
+		display: block
+		text-align: center
+		margin-top: 30px
+
+.navigation-list
+	font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin-left: 22px
+		position: relative
+		+r(550)
+			margin-left: 10px
+		&.is-active,&:hover
+			&::before,::after
+				position: absolute
+				bottom: -10px
+				right: 0
+				width: calc(50% - 2px)
+				height: 2px
+				background-color: #008ed6
+				content: ''
+			&::before
+				left: 0
+	&__link
+		font-size: 16px
+		padding: 4px
+		text-decoration: none
+		color: #fffefe
+
+
+.header-content
+	max-width: 485px
+	&__intro
+		margin-bottom: 20px
+		+r(700)
+			margin-bottom: 10px
+	&__title
+		color: #fff
+		font-size: 48px
+		font-weight: 600
+		line-height: 1.2
+		margin-bottom: 20px
+		+r(700)
+			font-size: 40px
+			line-height: 1
+	&__description
+		margin-bottom: 34px
+		+r(700)
+			margin-bottom: 54px
+	.btn
+		margin-right: 20px
+
+.btn
+	display: inline-block
+	max-width: 160px
+	width: 100%
+	height: 50px
+	font-size: 14px
+	line-height: 50px
+	text-align: center
+	background-color: transparent
+	text-transform: uppercase
+	text-decoration: none
+	color: #fff
+	border-radius: 5px
+	border: 1px solid #4b494d
+	cursor: pointer
+	transition: .8s ease
+	&:hover,&:focus
+		border-color: #008ed6
+	&--download
+		background-color: #008ed6
+		border-color: #008ed6
+		&:hover,&:focus
+			background-color: lighten(#008ed6, 15%)
+			text-shadow: 1px 1px 0 #000
+	&--cost
+		color: #008ed6
+
+.product
+	text-align: center
+	padding: 65px 0
+	&__intro
+		margin-bottom: 22px
+	&__title
+		margin-bottom: 110px
+		+r(1000)
+			margin-bottom: 50px
+
+.adv
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	+r(1000)
+		flex-wrap: wrap
+		justify-content: space-around
+
+.adv-item
+	max-width: 235px
+	width: 100%
+	+r(1000)
+		max-width: 50%
+		width: 50%
+		margin-bottom: 25px
+		padding: 0 25px
+	&__title
+		margin-bottom: 25px
+		font-size: 24px
+		+r(1000)
+			margin-bottom: 10px
+	&__icon
+		width: 90px
+		height: 90px
+		border-radius: 50%
+		border: 1px solid #999
+		margin: 0 auto 50px
+		position: relative
+		+r(1000)
+			margin-bottom: 25px
+		&.responsive::before
+			position: absolute
+			top: 32px
+			left: 28px
+			content: ''
+			+sprite($s-responsive)
+		&.custom::before
+			position: absolute
+			top: 30px
+			left: 28px
+			content: ''
+			+sprite($s-custom)
+		&.lovely::before
+			position: absolute
+			top: 27px
+			left: 27px
+			content: ''
+			+sprite($s-lovely)
+		&.mobile::before
+			position: absolute
+			top: 28px
+			left: 35px
+			content: ''
+			+sprite($s-mobile)
+.device
+	padding: 65px 0
+	&__intro
+		margin-bottom: 20px
+	&__title
+		margin-bottom: 50px
+	&__text
+		margin-bottom: 38px
+
+.device-img
+	display: inline-block
+	vertical-align: top
+	+r(1030)
+		display: none
+
+.device-info
+	display: inline-block
+	vertical-align: top
+	max-width: 485px
+	width: 100%
+	padding-left: 70px
+	+r(1030)
+		padding-left: 0
+	.g-title::after, .g-title::before
+		left: 28px
+		top: 64px
+
+.device-info
+	+r(1030)
+		text-align: center
+		margin: 0 auto
+		display: block
+
+.device__item
+	color: #1b1b1b
+	position: relative
+	font-size: 18px
+	font-weight: 400
+	line-height: 30px
+	padding-left: 26px
+	margin-bottom: 20px
+	+r(1030)
+		padding-left: 0
+		margin-bottom: 5px
+	+r(700)
+		font-size: 14px
+		font-weight: 700
+	&.cup::before
+		position: absolute
+		content: ''
+		+sprite($s-cup)
+		left: 0
+		top: 5px
+	&.mouse::before
+		position: absolute
+		content: ''
+		+sprite($s-mouse)
+		left: 0
+		top: 5px
+	&.energy::before
+		position: absolute
+		content: ''
+		+sprite($s-energy)
+		left: 0
+		top: 6px
+	&.time::before
+		position: absolute
+		content: ''
+		+sprite($s-time)
+		left: 0
+		top: 5px
+	&.cup::before, &.time::before, &.energy::before, &.mouse::before
+		+r(1030)
+			display: none
+
+.customize
+	background-color: #f2f2f2
+	padding: 65px 0
+	&__intro
+		margin-bottom: 20px
+	&__title
+		margin-bottom: 50px
+	&__text
+		margin-bottom: 38px
+		line-height: 1.8
+	.g-title::after, .g-title::before
+		left: 28px
+		top: 64px
+
+.customize-container
+	display: inline-block
+	vertical-align: top
+	max-width: 448px
+	width: 100%
+
+.customize-img
+	display: inline-block
+	vertical-align: top
+	position: relative
+	top: -30px
+
+.pricing
+	padding: 65px 0
+	background: url(../img/bg1.jpg) center top no-repeat
+	background-size: cover
+	text-align: center
+	&__intro
+		margin-bottom: 20px
+	&__title
+		color: #fff
+		margin-bottom: 50px
+
+//slider custom css
+.slider__slide
+	text-align: left
+	color: #fff
+	max-width: 500px
+	width: 100%
+	font-size: 24px
+	line-height: 32px
+
+.slick-dots
+	bottom: -65px
+
+.slick-dots li button:before
+	color: #111
+	font-size: 7px
+	opacity: .8
+
+.slick-dots li button:hover:before
+	color: #fff
+
+.slick-dots li.slick-active button:before
+	color: #fff
+	font-size: 10px
+	opacity: 1
+
+//end slider css
+
+.get
+	background-color: #15141a
+	padding: 65px 0
+	span
+		color: #fff
+		font-size: 36px
+		display: inline-block
+		vertical-align: middle
+		margin-right: 133px
+		+r(1200)
+			margin-right: 10px
+		+r(980)
+			font-size: 28px
+	a
+		margin-left: 10px
+
+.cost
+	padding: 65px 0
+	text-align: center
+	&__intro
+		margin-bottom: 20px
+	&__title
+		margin-bottom: 100px
+		+r(900)
+			margin-bottom: 40px
+
+.price
+	font-size: 0
+	margin: 0 -15px
+	+r(900)
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+	+r(700)
+		justify-content: center
+	&-item
+		max-width: 270px
+		width: 100%
+		text-align: center
+		display: inline-block
+		margin: 0 15px
+		border: 1px solid #e0e0e0
+		+r(900)
+			max-width: 40%
+			width: 40%
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+		+r(700)
+			max-width: 100%
+			width: 50%
+		&__header
+			color: #1a1a1a
+			font-size: 24px
+			font-weight: 700
+			text-transform: uppercase
+			padding: 20px 0
+			border-bottom: 1px solid #e0e0e0
+			+r(700)
+				padding: 10px 0
+		&__cost
+			color: #1a1a1a
+			font-size: 60px
+			font-weight: 600
+			padding: 50px 0 10px 0
+			border-bottom: 1px solid #e0e0e0
+			+r(700)
+				padding: 25px 0 0 0
+				font-size: 48px
+			sup
+				color: #1a1a1a
+				font-size: 44px
+				font-weight: 600
+				+r(700)
+					font-size: 28px
+			span
+				color: #999
+				font-size: 18px
+				font-weight: 400
+				position: relative
+				top: -30px
+				+r(700)
+					top: -15px
+		&__text
+			padding: 45px 30px
+			+r(700)
+				padding: 25px 15px
+		&__btn
+			margin-bottom: 30px
+
+		&.is-active
+			.price-item__cost
+				background-color: #008ed6
+				color: #fff
+				sup
+					color: #fff
+				span
+					color: #fff
+			.btn--cost
+				background-color: #008ed6
+				border-color: #008ed6
+				color: #fff
+				&:hover,&:focus
+					color: #999
+
+.contact
+	padding: 65px 0 0
+	background-color: #ededed
+	text-align: center
+	+r(700)
+		padding-top: 25px
+	&__intro
+		margin-bottom: 20px
+		+r(700)
+			margin-bottom: 10px
+	&__title
+		margin-bottom: 100px
+		+r(700)
+			margin-bottom: 50px
+	.g-title::after, .g-title::before
+		top: 90px
+		+r(700)
+			top: 50px
+
+.addr
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-around
+	margin-bottom: 70px
+	+r(700)
+		flex-direction: column
+		flex-wrap: wrap
+		align-items: center
+		margin-bottom: 20px
+	&-item
+		max-width: 170px
+		width: 100%
+		padding-top: 70px
+		color: #999
+		font-family: SourceSansPro
+		font-size: 18px
+		font-weight: 400
+		line-height: 1
+		position: relative
+		+r(700)
+			padding-top: 40px
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 0
+		a
+			color: #999
+			text-decoration: none
+		&.phone::before
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -12px
+			content: ''
+			+sprite($s-mobile)
+		&.pointer::before
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -12px
+			content: ''
+			+sprite($s-pointer)
+		&.mail::before
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -10px
+			content: ''
+			+sprite($s-mail)
+.form-wrap
+	position: relative
+	top: 90px
+	z-index: 100
+	+r(900)
+		top: 20px
+	+r(700)
+		top: 0
+.form
+	max-width: 770px
+	width: 100%
+	margin: 0 auto
+	text-align: left
+	background-color: #15141a
+	padding: 60px 70px
+	+r(900)
+		padding: 35px 70px
+	+r(480)
+		padding: 15px
+	input,textarea
+		border: none
+		outline: none
+		font-family: $default-font
+	input[type=submit]
+		display: block
+		margin-left: auto
+		color: #fff
+		line-height: 22px
+		background-color: #008ed6
+		border-color: #008ed6
+		&:hover,&:focus
+			background-color: lighten(#008ed6, 15%)
+			text-shadow: 1px 1px 0 #000
+	a.btn
+		display: block
+		margin-left: auto
+		+r(900)
+			margin: auto
+	input,textarea
+		padding: 15px
+		background-color: #15141a
+		+placeholder-color(#999)
+		color: #999
+		border: 1px solid #999
+		border-radius: 4px
+		margin-bottom: 20px
+		width: 100%
+	textarea
+		padding: 20px 30px
+		height: 190px
+		width: 100%
+		// overflow-y: scroll
+		overflow-x: hidden
+		resize: none
+
+.inner-form
+	+clr
+
+.inputs
+	float: left
+	width: 300px
+	padding-right: 15px
+	+r(900)
+		float: none
+		padding-right: 0
+		display: block
+		margin: 0 auto
+	+r(480)
+		width: 174px
+
+.textarea
+	float: right
+	width: 300px
+	+r(900)
+		float: none
+		margin: 0 auto
+	+r(480)
+		width: 174px
+
+.map
+	min-height: 370px
+	background-color: #ccc
+
+#map
+	height: 370px
+
+.footer
+	padding: 40px 0
+	background-color: #15141a
+	text-align: center
+	&__link
+		display: inline-block
+		vertical-align: middle
+		margin-bottom: 32px
+		position: relative
+		padding: 0 15px
+		&.bb::before
+			position: absolute
+			top: 2px
+			content: ''
+			+sprite($s-be)
+		&.drib::before
+			position: absolute
+			content: ''
+			+sprite($s-drib)
+		&.tw::before
+			position: absolute
+			top: 2px
+			content: ''
+			+sprite($s-tw)
+		&.fb::before
+			position: absolute
+			content: ''
+			+sprite($s-fb)
+		&.in::before
+			position: absolute
+			content: ''
+			+sprite($s-in)
+
+.copyright
+	color: #444348
+	font-size: 14px
+	font-weight: 600
+	text-transform: uppercase
